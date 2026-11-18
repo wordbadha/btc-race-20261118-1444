@@ -5,7 +5,7 @@
 // cutting losers fast. This bot does exactly one thing:
 //
 //   - ENTER when the last 60 minutes are up at least +0.50% on each of the last
-//     two closes (momentum that persists, not a one-bar spike) AND the close is
+//     three closes (momentum that persists, not a one- or two-bar spike) AND the close is
 //     above its 120-minute exponential average (the hourly trend is up).
 //   - Size: 100% of cash on every entry (one position at most, long only).
 //   - EXIT: take half off at +0.80% (bank the move), then let the rest run with
@@ -25,7 +25,7 @@ const SYMBOL = "CBBTC";
 // Entry: 60-minute return, in basis points, must clear this on each of the
 // last CONFIRM closes.
 const ENTRY_R60_BPS = 50n; // +0.50%
-const CONFIRM = 2;
+const CONFIRM = 3;
 // Trend filter: close above this EMA length (minutes).
 const EMA_LEN = 120;
 // Exits, in basis points from the entry close (partial / take-profit / stop).
